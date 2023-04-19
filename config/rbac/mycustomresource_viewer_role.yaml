@@ -1,0 +1,27 @@
+# permissions for end users to view mycustomresources.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: mycustomresource-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: crdemo
+    app.kubernetes.io/part-of: crdemo
+    app.kubernetes.io/managed-by: kustomize
+  name: mycustomresource-viewer-role
+rules:
+- apiGroups:
+  - demo.mycustomresource
+  resources:
+  - mycustomresources
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - demo.mycustomresource
+  resources:
+  - mycustomresources/status
+  verbs:
+  - get
