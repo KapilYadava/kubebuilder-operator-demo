@@ -1,0 +1,9 @@
+apiVersion: demo.mycustomresource/v1
+kind: Machine
+metadata:
+  name: machine-sample-3
+spec:
+  foo: bar
+status:
+  networkstate: Attached
+  state: Running

@@ -8,6 +8,32 @@ rules:
 - apiGroups:
   - demo.mycustomresource
   resources:
+  - machines
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - demo.mycustomresource
+  resources:
+  - machines/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - demo.mycustomresource
+  resources:
+  - machines/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - demo.mycustomresource
+  resources:
   - mycustomresources
   verbs:
   - create
